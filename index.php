@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <label>Email :</label>
+        <input type="email" name="email">
+        <label>Genre</label>
+        <input type="text" name="genre">
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>
 
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
@@ -23,12 +40,12 @@ try {
 
     
     $mail->setFrom('shyamduba58@gmail.com', 'Your Name'); 
-    $mail->addAddress('shyamduba05@gmail.com');          
+    $mail->addAddress($_POST["email"]);          
 
     
     $mail->isHTML(true);
-    $mail->Subject = 'Test Email';
-    $mail->Body    = 'This is a test email sent from PHP using Gmail\'s SMTP server with TLS encryption.';
+    $mail->Subject = 'movie recomendation';
+    $mail->Body    = 'This is a test email which will send the recommemded movies';
 
     $mail->send();
     echo 'Message has been sent';
