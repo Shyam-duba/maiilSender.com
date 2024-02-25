@@ -27,7 +27,7 @@ try {
     
     $mail->isHTML(true);
     $mail->Subject = 'movie recomendation';
-    $mail->Body    = 'This is a test email which will send the recommemded movies';
+    $mail->Body    = '<h1 style="color:red">Room Shambels</h1>';
 
     $mail->send();
     echo 'Message has been sent';
